@@ -14,8 +14,8 @@ class TestController extends Controller
      */
     public function index()
     {
-        $allTest = test::all(); // Se manda a llamar todos los campos de la tabla 'test'
-        return view('test.index')->with('test', $allTest);
+        $allTest = Test::all(); // Se manda a llamar todos los campos de la tabla 'tests'
+        return view('test.index')->with('tests', $allTest);
     }
 
     /**

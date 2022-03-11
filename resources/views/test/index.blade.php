@@ -7,9 +7,10 @@
             </h2>
         </x-slot>
     <!--Verificamos que no este vacia la BD-->
-        @if( isset($test) )
+        @if( $tests -> isNotEmpty() ) 
+                <span class="h2">Proximamente</span>
+        @else 
                 <span class="h2">No hay cuestionarios por contestar. Espera tu turno.</span>
-            
         @endif
     @else
         <x-slot name="header">
