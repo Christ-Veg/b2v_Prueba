@@ -25,7 +25,7 @@ class TestController extends Controller
      */
     public function create()
     {
-        //
+        return view('test.create');
     }
 
     /**
@@ -36,7 +36,12 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $test = new Test();
+        $test->n_test = $request->get('n_test');
+        $test->d_test = $request->get('d_test');
+        $test->save();
+
+        return redirect('/test');
     }
 
     /**

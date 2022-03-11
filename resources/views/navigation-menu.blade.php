@@ -14,13 +14,13 @@
                 <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                     {{ __('Dashboard') }}
                 </x-jet-nav-link>
-            </ul>)
+            </ul>
             
             
-            <!-- Si es usuario de tipo Admin entonces tendra las siguientes opciones-->
+            <!-- Si es usuario de tipo 2 (Admin), entonces tendra las siguientes opciones-->
             @if (Auth::user()->rol == 2)
                 <ul class="navbar-nav me-auto">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="{{ route('test.create') }}" :active="request()->routeIs('test.create')">
                         {{ __('Nuevo Cuestionario') }}
                     </x-jet-nav-link>
                 </ul>
