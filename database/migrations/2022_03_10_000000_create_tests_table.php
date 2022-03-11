@@ -13,7 +13,7 @@ class CreateTestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('test', function (Blueprint $table) {//Damos de alta la tabla para los test
+        Schema::create('tests', function (Blueprint $table) {//Damos de alta la tabla para los test
             $table->id();
             $table->string('n_test', 25);
             $table->text('d_test');
