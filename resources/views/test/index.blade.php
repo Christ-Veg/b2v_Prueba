@@ -8,7 +8,36 @@
         </x-slot>
     <!--Verificamos que no este vacia la BD-->
         @if( $tests -> isNotEmpty() ) 
-                <span class="h2">Proximamente</span>
+        <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name Test</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    @foreach ($tests as $test)
+                    <tr>
+                        <td>{{ $test->id }}</td>
+                        <td>{{ $test->n_test }}</td>
+                        <td>{{ $test->d_test }}</td>
+                        <td>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <a href="/test/{{$test->id}}/show" class="btn btn-sm btn-info btn-block">Contestar</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
         @else 
                 <span class="h2">No hay cuestionarios por contestar. Espera tu turno.</span>
         @endif
@@ -18,7 +47,38 @@
                 {{ __('Bienvenido ' ) }} {{Auth::user()->name }}
             </h2>
         </x-slot>
-                <span class="h2">Proximamente</span>
+
+<!--Verificamos que no este vacia la BD-->
+        @if( $tests -> isNotEmpty() ) 
+        <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name Test</th>
+                        <th scope="col">Description</th>
+                        <th scope="col" class="center">Actions</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    @foreach ($tests as $test)
+                    <tr>
+                        <td>{{ $test->id }}</td>
+                        <td>{{ $test->n_test }}</td>
+                        <td>{{ $test->d_test }}</td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+        @else 
+                <span class="h2">No hay cuestionarios disponibles. Crea uno ahora.</span>
+        @endif
     @endif
 
 </x-app-layout>

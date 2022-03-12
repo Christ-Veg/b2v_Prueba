@@ -17,6 +17,7 @@ class CreateTestsTable extends Migration
             $table->id();
             $table->string('n_test', 25);
             $table->text('d_test');
+            $table->text('ruta');
             $table->timestamps();
         });
     }

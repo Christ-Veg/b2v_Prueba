@@ -39,6 +39,7 @@ class TestController extends Controller
         $test = new Test();
         $test->n_test = $request->get('n_test');
         $test->d_test = $request->get('d_test');
+        $test->ruta= $request->get('ruta');
         $test->save();
 
         return redirect('/test');
@@ -61,9 +62,9 @@ class TestController extends Controller
      * @param  \App\Models\Test  $test
      * @return \Illuminate\Http\Response
      */
-    public function edit(Test $test)
+    public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -75,7 +76,7 @@ class TestController extends Controller
      */
     public function update(Request $request, Test $test)
     {
-        //
+
     }
 
     /**
@@ -86,6 +87,5 @@ class TestController extends Controller
      */
     public function destroy(Test $test)
     {
-        //
     }
 }

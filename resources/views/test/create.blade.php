@@ -17,15 +17,21 @@
                         <label for="d_test">Description</label>
                         <textarea class="form-control" id="d_test" name="d_test" rows="5" required></textarea>
                     </div>
-                    <div class="row mt-4 col-5">
-                            <a href="/dashboard" class="btn btn-outline-secondary btn-block">Cancel</a>
+                    <div class="form-group">
+                        <label for="ruta">Ruta del archivo</label>
+                        <input type="file" class="form-control" id="ruta" name="ruta" required>
                     </div>
+                    
                 </div>
+                
                 <div class="col-md-6">
                     <div class="row mt-5">
                         <div class="col-11">
                             <button type="submit" class="btn btn-primary btn-block">Submit</button>
                         </div>
+                        <div class="row mt-4 col-5">
+                            <a href="/dashboard" class="btn btn-outline-secondary btn-block">Cancel</a>
+                    </div>
                     </div>
                 </div>
 
