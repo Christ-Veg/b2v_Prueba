@@ -10,24 +10,22 @@
                 @csrf
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="n_test">Name</label>
-                        <input type="text" class="form-control" id="n_test" name="n_test" required>
+                            <label for="ruta">Archivo de preguntas</label>
+                            <input type="file" class="form-control" id="ruta" name="ruta" required>
                     </div>
-                    <div class="form-group">
-                        <label for="d_test">Description</label>
-                        <textarea class="form-control" id="d_test" name="d_test" rows="5" required></textarea>
+                    <p>
+
+                    </p>
+                    <div class="col-11">
+                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
                     </div>
-                    
                 </div>
-                
                 <div class="col-md-6">
                     <div class="row mt-5">
-                        <div class="col-11">
-                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
-                        </div>
-                        <div class="row mt-4 col-5">
+                        
+                        <div class="row mt-4 col-4">
                             <a href="/dashboard" class="btn btn-outline-secondary btn-block">Cancel</a>
-                    </div>
+                        </div>
                     </div>
                 </div>
 

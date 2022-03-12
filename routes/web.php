@@ -23,8 +23,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 //Opciones de menú principa?
 Route::middleware(['auth:sanctum', 'verified'])->resource('/test', 'App\Http\Controllers\TestController');
-//Para agregar preguntas desde controlador
-Route::middleware(['auth:sanctum', 'verified'])->get('/test/{id}/addquestions', 'App\Http\Controllers\TestController@addquestions');
+
 
 //Importación de excel
 Route::post('import-list-excel', 'App\Http\Controllers\QuestionControler@importExcel')->name('questions.import.excel');
