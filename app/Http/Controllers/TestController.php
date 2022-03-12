@@ -40,7 +40,6 @@ class TestController extends Controller
         $test->n_test = $request->get('n_test');
         $test->d_test = $request->get('d_test');
         $test->save();
-
         return redirect('/test');
     }
 
@@ -87,8 +86,5 @@ class TestController extends Controller
     public function destroy(Test $test)
     {
     }
-    public function addquestions($id = 'none')
-    {
-        return view('test.addquestions')->with('id', $id);
-    }
+    
 }

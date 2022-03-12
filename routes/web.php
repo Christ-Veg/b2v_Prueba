@@ -21,7 +21,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return redirect('test');
 })->name('dashboard');
 
-//Opciones de menú principa?
+//Se envia despues de 
 Route::middleware(['auth:sanctum', 'verified'])->resource('/test', 'App\Http\Controllers\TestController');
 
 

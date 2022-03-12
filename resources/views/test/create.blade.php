@@ -22,7 +22,6 @@
                 </div>
                 <div class="col-md-6">
                     <div class="row mt-5">
-                        
                         <div class="row mt-4 col-4">
                             <a href="/dashboard" class="btn btn-outline-secondary btn-block">Cancel</a>
                         </div>
