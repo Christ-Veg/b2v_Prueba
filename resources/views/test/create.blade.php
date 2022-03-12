@@ -17,10 +17,6 @@
                         <label for="d_test">Description</label>
                         <textarea class="form-control" id="d_test" name="d_test" rows="5" required></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="ruta">Ruta del archivo</label>
-                        <input type="file" class="form-control" id="ruta" name="ruta" required>
-                    </div>
                     
                 </div>
                 

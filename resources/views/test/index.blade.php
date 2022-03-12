@@ -69,7 +69,9 @@
                         <td>{{ $test->n_test }}</td>
                         <td>{{ $test->d_test }}</td>
                         <td>
-                            
+                            <div class="col-md-2">
+                                    <a href="/test/{{$test->id}}/addquestions" class="btn btn-sm btn-warning btn-block">Agregar Preguntas</a>
+                            </div>
                         </td>
                     </tr>
                     @endforeach

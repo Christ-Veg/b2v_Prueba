@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Test;
+use App\Models\Question;
 use Illuminate\Http\Request;
+use App\Imports\QuestionsImport;
+use Maatwebsite\Excel\Facades\Excel;
 
-class TestController extends Controller
+class QuestionControler extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,8 @@ class TestController extends Controller
      */
     public function index()
     {
-        $allTest = Test::all(); // Se manda a llamar todos los campos de la tabla 'tests'
-        return view('test.index')->with('tests', $allTest);
+        return view('test.addquestions');
+
     }
 
     /**
@@ -25,7 +27,7 @@ class TestController extends Controller
      */
     public function create()
     {
-        return view('test.create');
+        //
     }
 
     /**
@@ -36,21 +38,28 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-        $test = new Test();
-        $test->n_test = $request->get('n_test');
-        $test->d_test = $request->get('d_test');
-        $test->save();
-
-        return redirect('/test');
+        //
     }
+    public function importExcel(Request $request){
+        $file = $request->file('file');
+        //Excel::import(new QuestionsImport, $file);
+        Excel::import(new QuestionsImport, $file->store('temp'));
+        return view('test.index');
+    }
+    /*public function fileImport(Request $request) 
+    {
+        
+        Excel::import(new UsersImport, $request->file('file')->store('temp'));
+        return back();
+    }*/
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Test  $test
+     * @param  \App\Models\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function show(Test $test)
+    public function show(Question $question)
     {
         //
     }
@@ -58,37 +67,34 @@ class TestController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Test  $test
+     * @param  \App\Models\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Question $question)
     {
-        
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Test  $test
+     * @param  \App\Models\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Test $test)
+    public function update(Request $request, Question $question)
     {
-
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Test  $test
+     * @param  \App\Models\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Test $test)
+    public function destroy(Question $question)
     {
-    }
-    public function addquestions($id = 'none')
-    {
-        return view('test.addquestions')->with('id', $id);
+        //
     }
 }
