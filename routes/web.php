@@ -21,9 +21,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return redirect('test');
 })->name('dashboard');
 
-//Se envia despues de 
+//Se envia despues de dar de alta el cuestionario
 Route::middleware(['auth:sanctum', 'verified'])->resource('/test', 'App\Http\Controllers\TestController');
 
 
 //Importación de excel
-Route::post('import-list-excel', 'App\Http\Controllers\QuestionControler@importExcel')->name('questions.import.excel');
+Route::post('import-list-excel', 'App\Http\Controllers\TestController@importExcel')->name('questions.info.excel');

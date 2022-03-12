@@ -24,14 +24,10 @@
                     @foreach ($tests as $test)
                     <tr>
                         <td>{{ $test->id }}</td>
-                        <td>{{ $test->n_test }}</td>
-                        <td>{{ $test->d_test }}</td>
+                        <td>{{ $test->pregunta }}</td>
+                        <td>{{ $test->respuesta }}</td>
                         <td>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <a href="/test/{{$test->id}}/show" class="btn btn-sm btn-info btn-block">Contestar</a>
-                                </div>
-                            </div>
+                            
                         </td>
                     </tr>
                     @endforeach
@@ -66,12 +62,10 @@
                     @foreach ($tests as $test)
                     <tr>
                         <td>{{ $test->id }}</td>
-                        <td>{{ $test->n_test }}</td>
-                        <td>{{ $test->d_test }}</td>
+                        <td>{{ $test->pregunta }}</td>
+                        <td>{{ $test->respuesta }}</td>
                         <td>
-                            <div class="col-md-2">
-                                    <a href="/test/{{$test->id}}/addquestions" class="btn btn-sm btn-warning btn-block">Agregar Preguntas</a>
-                            </div>
+                            
                         </td>
                     </tr>
                     @endforeach

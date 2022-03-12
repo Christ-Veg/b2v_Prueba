@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Test;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
+use App\Imports\TestImport;
 
 class TestController extends Controller
 {
@@ -36,13 +38,19 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-        $test = new Test();
-        $test->n_test = $request->get('n_test');
-        $test->d_test = $request->get('d_test');
+        /*$test = new Test();
+        $test->pregunta = $request->get('pregunta');
+        $test->respuesta = $request->get('respuesta');
         $test->save();
+        return redirect('/test');*/
+    }
+    
+    public function importExcel(Request $request) 
+    {
+        $file = $request->file('ruta');
+        Excel::import(new TestImport, $file);
         return redirect('/test');
     }
-
     /**
      * Display the specified resource.
      *

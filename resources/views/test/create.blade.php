@@ -6,7 +6,7 @@
     </x-slot>
     <div class="row container">
         <div class="col-md-12">
-            <form class="row" action="/test" method="POST">
+            <form class="row" action="{{ route('questions.info.excel') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="col-md-6">
                     <div class="form-group">
@@ -17,7 +17,7 @@
 
                     </p>
                     <div class="col-11">
-                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                            <button class="btn btn-primary btn-block">Submit</button>
                     </div>
                 </div>
                 <div class="col-md-6">
