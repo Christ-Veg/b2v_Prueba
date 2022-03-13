@@ -44,13 +44,6 @@ class TestController extends Controller
         $test->save();
         return redirect('/test');*/
     }
-    
-    public function importExcel(Request $request) 
-    {
-        $file = $request->file('ruta');
-        Excel::import(new TestImport, $file);
-        return redirect('/test');
-    }
     /**
      * Display the specified resource.
      *
@@ -94,5 +87,17 @@ class TestController extends Controller
     public function destroy(Test $test)
     {
     }
-    
+    /*
+    *
+    *METODOS AÑADIDOS POR MI
+    *
+    */
+    public function importExcel(Request $request) {
+        $file = $request->file('ruta');
+        Excel::import(new TestImport, $file);
+        return redirect('/test');
+    }
+    public function addOption( $id = 'none' ){
+        return view('test.addoption')->with('id', $id);
+    }
 }

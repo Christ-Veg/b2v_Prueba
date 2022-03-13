@@ -21,9 +21,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return redirect('test');
 })->name('dashboard');
 
+
+
 //Se envia despues de dar de alta el cuestionario
 Route::middleware(['auth:sanctum', 'verified'])->resource('/test', 'App\Http\Controllers\TestController');
-
-
 //Importación de excel
 Route::post('import-list-excel', 'App\Http\Controllers\TestController@importExcel')->name('questions.info.excel');
+//Para agregar poder agregar opciones
+Route::middleware(['auth:sanctum', 'verified'])->get('/test/{id}/addOption', 'App\Http\Controllers\TestController@addOption');
+//Vista para agregar opciones.
+Route::middleware(['auth:sanctum', 'verified'])->resource('/option', 'App\Http\Controllers\OptionController');

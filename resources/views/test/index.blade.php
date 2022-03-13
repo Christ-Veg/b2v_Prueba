@@ -14,8 +14,7 @@
                 <thead class="thead-light">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Name Test</th>
-                        <th scope="col">Description</th>
+                        <th scope="col">Quetion</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -25,9 +24,10 @@
                     <tr>
                         <td>{{ $test->id }}</td>
                         <td>{{ $test->pregunta }}</td>
-                        <td>{{ $test->respuesta }}</td>
                         <td>
-                            
+                            <div class="col-md-3">
+                                <a href="/test" class="btn btn-sm btn-primary ">Add Option</a>
+                            </div>
                         </td>
                     </tr>
                     @endforeach
@@ -52,9 +52,8 @@
                 <thead class="thead-light">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Name Test</th>
-                        <th scope="col">Description</th>
-                        <th scope="col" class="center">Actions</th>
+                        <th scope="col">Question</th>
+                        <th scope="col" class="center">Action</th>
                     </tr>
                 </thead>
                 
@@ -63,9 +62,10 @@
                     <tr>
                         <td>{{ $test->id }}</td>
                         <td>{{ $test->pregunta }}</td>
-                        <td>{{ $test->respuesta }}</td>
                         <td>
-                            
+                            <div class="col-md-3">
+                                <a href="/test/{{ $test->id }}/addOption" class="btn btn-sm btn-primary ">Add Option</a>
+                            </div>
                         </td>
                     </tr>
                     @endforeach

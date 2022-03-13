@@ -24,11 +24,8 @@
                         {{ __('Nuevo Cuestionario') }}
                     </x-jet-nav-link>
                 </ul>
-                <ul class="navbar-nav me-auto">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Asignar Cuestionario') }}
-                    </x-jet-nav-link>
-                </ul>
+                
+                
             @endif
 
             <!-- Right Side Of Navbar -->
