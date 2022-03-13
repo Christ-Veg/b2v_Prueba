@@ -16,6 +16,7 @@ class CreateAssignmentTable extends Migration
         Schema::create('assignment', function (Blueprint $table) {//Se crea tabla para almacenar asignaciones
             $table->unsignedBigInteger('id_test');
             $table->unsignedBigInteger('id_user');
+            $table->timestamps();
             
 
             $table->foreign('id_test')->references('id')->on('tests')->onDelete('cascade')->onUpdate('cascade');

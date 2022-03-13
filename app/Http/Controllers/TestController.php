@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Test;
+use App\Models\User;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use App\Imports\TestImport;
@@ -99,5 +100,9 @@ class TestController extends Controller
     }
     public function addOption( $id = 'none' ){
         return view('test.addoption')->with('id', $id);
+    }
+    public function assignmentQ( $id = 'none' ){
+        $allUsers = User::all(); // Se manda a llamar todos los campos de la tabla 'users'
+        return view('test.assignment')->with('id', $id)->with('users', $allUsers);
     }
 }

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="h4 font-weight-bold">
-            {{ __('Crear nuevo cuestionario.') }}
+            {{ __('Subir archivo de preguntas.') }}
         </h2>
     </x-slot>
     <div class="row container">

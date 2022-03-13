@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Assigments;
+use App\Models\Assignment;
 use Illuminate\Http\Request;
 
-class AssigmentsController extends Controller
+class AssignmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,16 +35,21 @@ class AssigmentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $assignment = new Assignment();
+        $assignment->id_test = $request->get('id_test');
+        $assignment->id_user = $request->get('id_user');
+        $assignment->save();
+
+        return redirect('/test');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Assigments  $assigments
+     * @param  \App\Models\Assignment  $assignment
      * @return \Illuminate\Http\Response
      */
-    public function show(Assigments $assigments)
+    public function show(Assignment $assignment)
     {
         //
     }
@@ -52,10 +57,10 @@ class AssigmentsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Assigments  $assigments
+     * @param  \App\Models\Assignment  $assignment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Assigments $assigments)
+    public function edit(Assignment $assignment)
     {
         //
     }
@@ -64,10 +69,10 @@ class AssigmentsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Assigments  $assigments
+     * @param  \App\Models\Assignment  $assignment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Assigments $assigments)
+    public function update(Request $request, Assignment $assignment)
     {
         //
     }
@@ -75,10 +80,10 @@ class AssigmentsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Assigments  $assigments
+     * @param  \App\Models\Assignment  $assignment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Assigments $assigments)
+    public function destroy(Assignment $assignment)
     {
         //
     }

@@ -26,8 +26,9 @@
                         <td>{{ $test->pregunta }}</td>
                         <td>
                             <div class="col-md-3">
-                                <a href="/test" class="btn btn-sm btn-primary ">Add Option</a>
+                                <a href="/test" class="btn btn-sm btn-primary ">Enviar</a>
                             </div>
+                            
                         </td>
                     </tr>
                     @endforeach
@@ -63,8 +64,13 @@
                         <td>{{ $test->id }}</td>
                         <td>{{ $test->pregunta }}</td>
                         <td>
-                            <div class="col-md-3">
-                                <a href="/test/{{ $test->id }}/addOption" class="btn btn-sm btn-primary ">Add Option</a>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <a href="/test/{{ $test->id }}/addOption" class="btn btn-sm btn-primary ">Add Option</a>
+                                </div>
+                                <div class="col-md-3">
+                                        <a href="/test/{{$test->id}}/assignment" class="btn btn-sm btn-warning btn-block">Assign</a>
+                                </div>
                             </div>
                         </td>
                     </tr>

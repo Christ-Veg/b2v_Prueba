@@ -21,7 +21,7 @@
             @if (Auth::user()->rol == 2)
                 <ul class="navbar-nav me-auto">
                     <x-jet-nav-link href="{{ route('test.create') }}" :active="request()->routeIs('test.create')">
-                        {{ __('Nuevo Cuestionario') }}
+                        {{ __('Subir preguntas') }}
                     </x-jet-nav-link>
                 </ul>
                 
