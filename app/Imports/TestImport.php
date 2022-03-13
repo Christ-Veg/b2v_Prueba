@@ -16,7 +16,6 @@ class TestImport implements ToModel
     {
         return new Test([
             'pregunta'     => $row[0],
-            'respuesta'    => $row[1],
             //
         ]);
     }
