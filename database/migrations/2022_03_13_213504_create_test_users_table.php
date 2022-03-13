@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAssignmentTable extends Migration
+class CreateTestUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateAssignmentTable extends Migration
      */
     public function up()
     {
-        Schema::create('assignment', function (Blueprint $table) {//Se crea tabla para almacenar asignaciones
+        Schema::create('test_user', function (Blueprint $table) {//Se crea tabla para almacenar asignaciones
             $table->unsignedBigInteger('id_test');
             $table->unsignedBigInteger('id_user');
             $table->timestamps();
-            
 
             $table->foreign('id_test')->references('id')->on('tests')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
@@ -31,6 +30,6 @@ class CreateAssignmentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('assignment');
+        Schema::dropIfExists('test_users');
     }
 }

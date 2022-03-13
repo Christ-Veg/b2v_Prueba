@@ -34,4 +34,4 @@ Route::middleware(['auth:sanctum', 'verified'])->resource('/option', 'App\Http\C
 //Para agregar poder asignar preguntas
 Route::middleware(['auth:sanctum', 'verified'])->get('/test/{id}/assignment', 'App\Http\Controllers\TestController@assignmentQ');
 //Para asignaciones de preguntas.
-Route::middleware(['auth:sanctum', 'verified'])->resource('/asigna', 'App\Http\Controllers\AssignmentController');
+Route::middleware(['auth:sanctum', 'verified'])->resource('/asigna', 'App\Http\Controllers\test_usersController');
