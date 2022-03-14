@@ -41,27 +41,6 @@
                             </div>
                         </td>
                     </tr>
-                    <!--@foreach ($tests as $test)
-                    <tr>
-                        <td>{{ $test->id }}</td>
-                        <td>{{ $test->pregunta }}</td>
-                        <td>
-                            @foreach ($options as $option)
-                                @if ($option-> id_question == $test->id)
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    {{ $option->option }} </label>
-                                @endif
-                            @endforeach
-                        </td>
-                        <td>
-                            <div class="col-md-3">
-                                <a href="/test" class="btn btn-sm btn-primary ">Enviar</a>
-                            </div>
-                        </td>
-                    </tr>
-                    @endforeach
--->
                 </tbody>
             </table>
 </x-app-layout>
