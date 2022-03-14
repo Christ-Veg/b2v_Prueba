@@ -7,6 +7,7 @@ use App\Models\User;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use App\Imports\TestImport;
+use Illuminate\Support\Facades\Auth;
 
 class TestController extends Controller
 {
@@ -17,7 +18,8 @@ class TestController extends Controller
      */
     public function index()
     {
-        $allTest = Test::all(); // Se manda a llamar todos los campos de la tabla 'tests'
+        $user = Auth::user();
+        $allTest = User::find($user->id)->tests()->get();
         return view('test.index')->with('tests', $allTest);
     }
 
