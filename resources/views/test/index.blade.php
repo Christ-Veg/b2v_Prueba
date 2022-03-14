@@ -15,6 +15,7 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Quetion</th>
+                        <th scope="col">Options</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -25,10 +26,18 @@
                         <td>{{ $test->id }}</td>
                         <td>{{ $test->pregunta }}</td>
                         <td>
+                            @foreach ($options as $option)
+                                @if ($option-> id_question == $test->id)
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    {{ $option->option }} </label>
+                                @endif
+                            @endforeach
+                        </td>
+                        <td>
                             <div class="col-md-3">
                                 <a href="/test" class="btn btn-sm btn-primary ">Enviar</a>
                             </div>
-                            
                         </td>
                     </tr>
                     @endforeach
@@ -59,17 +68,20 @@
                 </thead>
                 
                 <tbody>
-                    @foreach ($tests as $test)
+                    @foreach ($questions as $question)
                     <tr>
-                        <td>{{ $test->id }}</td>
-                        <td>{{ $test->pregunta }}</td>
+                        <td>{{ $question->id }}</td>
+                        <td>{{ $question->pregunta }}</td>
                         <td>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <a href="/test/{{ $test->id }}/addOption" class="btn btn-sm btn-primary ">Add Option</a>
+                                    <a href="/test/{{ $question->id }}/addOption" class="btn btn-sm btn-primary ">Add Option</a>
                                 </div>
                                 <div class="col-md-3">
-                                        <a href="/test/{{$test->id}}/assignment" class="btn btn-sm btn-warning btn-block">Assign</a>
+                                    <a href="/test/{{ $question->id }}/viewOption" class="btn btn-sm btn-primary ">View Options</a>
+                                </div>
+                                <div class="col-md-3">
+                                        <a href="/test/{{$question->id}}/assignment" class="btn btn-sm btn-warning btn-block">Assign</a>
                                 </div>
                             </div>
                         </td>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Test;
 use App\Models\User;
+use App\Models\Options;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use App\Imports\TestImport;
@@ -18,9 +19,12 @@ class TestController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $allTest = User::find($user->id)->tests()->get();
-        return view('test.index')->with('tests', $allTest);
+        $user = Auth::user();//Se identifica al usuario que entro
+        $allTest = User::find($user->id)->tests()->get();//Se encuentran las preguntas que le corresponden al usuario
+        $options = Options::all();//Tomamos todas las preguntas
+        $questions = Test::all();
+        return view('test.index')->with('tests', $allTest)->with('options',$options)->with('questions',$questions);//Mostramos la vista y enviamos la informacion para mostrarla
+
     }
 
     /**
@@ -41,11 +45,6 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-        /*$test = new Test();
-        $test->pregunta = $request->get('pregunta');
-        $test->respuesta = $request->get('respuesta');
-        $test->save();
-        return redirect('/test');*/
     }
     /**
      * Display the specified resource.
@@ -102,6 +101,11 @@ class TestController extends Controller
     }
     public function addOption( $id = 'none' ){
         return view('test.addoption')->with('id', $id);
+    }
+    public function viewOption( $id = 'none' ){
+        $tests = Test::all();
+        $option = Options::all();
+        return view('test.viewOption')->with('id', $id)->with('tests', $tests)->with('options', $option);
     }
     public function assignmentQ( $id = 'none' ){
         $allUsers = User::all(); // Se manda a llamar todos los campos de la tabla 'users'

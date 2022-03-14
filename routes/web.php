@@ -29,6 +29,8 @@ Route::middleware(['auth:sanctum', 'verified'])->resource('/test', 'App\Http\Con
 Route::post('import-list-excel', 'App\Http\Controllers\TestController@importExcel')->name('questions.info.excel');
 //Para agregar poder agregar opciones
 Route::middleware(['auth:sanctum', 'verified'])->get('/test/{id}/addOption', 'App\Http\Controllers\TestController@addOption');
+//Para poder ver opciones
+Route::middleware(['auth:sanctum', 'verified'])->get('/test/{id}/viewOption', 'App\Http\Controllers\TestController@viewOption');
 //Vista para agregar opciones.
 Route::middleware(['auth:sanctum', 'verified'])->resource('/option', 'App\Http\Controllers\OptionController');
 //Para agregar poder asignar preguntas
